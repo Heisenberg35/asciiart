@@ -10,17 +10,17 @@ import java.util.Scanner;
  *
  */
 public class ScannerProvider {
-	
+
 	private Scanner scanner;
-	
-	public Scanner getScanner () {
+
+	public Scanner getScanner() {
 		return scanner;
 	}
-	
+
 	/** Constructeur privé */
-    private ScannerProvider(){
-    	this.scanner = new Scanner (System.in);
-    }
+	private ScannerProvider() {
+		this.scanner = new Scanner(System.in);
+	}
 
 	/** Instance unique non préinitialisée */
 	private static ScannerProvider INSTANCE = null;
@@ -32,10 +32,10 @@ public class ScannerProvider {
 		}
 		return INSTANCE;
 	}
-	
+
 	public int NextInt() {
 		int result = this.scanner.nextInt();
-		
+
 		if (this.scanner.hasNextLine()) {
 			this.scanner.nextLine();
 		}

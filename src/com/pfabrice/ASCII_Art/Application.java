@@ -3,9 +3,11 @@
  */
 package com.pfabrice.ASCII_Art;
 
+import com.pfabrice.ASCII_Art.alphabets.MesChiffres;
 import com.pfabrice.ASCII_Art.alphabets.MonAlphabet;
 import com.pfabrice.ASCII_Art.alphabets.MonAlphabet2;
 import com.pfabrice.ASCII_Art.manager.AsciiManager;
+import com.pfabrice.ASCII_Art.manager.ChiffreManager;
 import com.pfabrice.ASCII_Art.utils.ScannerProvider;
 
 /**
@@ -20,8 +22,10 @@ public class Application {
 		String saisieUtilisateur = "";
 		MonAlphabet monAlphabet = new MonAlphabet();
 		MonAlphabet2 monAlphabet2 = new MonAlphabet2();
+		MesChiffres mesChiffres = new MesChiffres();
 		AsciiManager asciiManager = new AsciiManager(monAlphabet);
 		AsciiManager asciiManager2 = new AsciiManager(monAlphabet2);
+		ChiffreManager chiffreManager = new ChiffreManager(mesChiffres);
 		
 		do {
 			
@@ -39,6 +43,15 @@ public class Application {
 				System.out.println(string);
 				
 			}
+			
+			System.out.println("Ecrire un chiffre ?");
+			saisieUtilisateur = ScannerProvider.getInstance().getScanner().nextLine();
+			for (String string : chiffreManager.getChiffreTranslation(saisieUtilisateur)) {
+				
+				System.out.println(string);
+				
+			}
+			
 			System.out.println("Voulez-vous quitter le programmer ? O/N");
 			saisieUtilisateur = ScannerProvider.getInstance().getScanner().nextLine();
 

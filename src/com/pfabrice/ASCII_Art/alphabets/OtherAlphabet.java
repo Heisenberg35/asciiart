@@ -7,7 +7,7 @@ package com.pfabrice.ASCII_Art.alphabets;
  * @author Fabrice
  *
  */
-public abstract class DefaultAlphabet {
+public abstract class OtherAlphabet {
 
 	int h;
 	int w;
@@ -25,7 +25,7 @@ public abstract class DefaultAlphabet {
 		return datas;
 	}
 
-	public DefaultAlphabet(int h, int w, String[] datas) {
+	public OtherAlphabet(int h, int w, String[] datas) {
 		this.h = h;
 		this.w = w;
 		this.datas = datas;
